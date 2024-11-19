@@ -10,10 +10,7 @@ module cpu(
     output wire [31:0] pc_branchOffset,
     output wire pc_zeroFlag,
     output wire pc_jmpFlag,
-    output wire branchFlag,
-    output wire [4:0] reset_count,   // Adicionado ao módulo cpu
-    output wire [4:0] jump_count,    // Adicionado ao módulo cpu
-    output wire [4:0] branch_count   // Adicionado ao módulo cpu
+    output wire branchFlag
 );
 	
 	(*keep=1*)wire [31:0] dataOut_Inst_M;
@@ -63,16 +60,12 @@ module cpu(
 	pc PC(
 		.Clk(Clk_System),
 		.Reset(Reset),
-		.zeroFlag(pc_zeroFlag),
+		.zeroFlag(zeroFlag),
 		.jmpFlag(pc_jmpFlag),
 		.branchFlag(pc_branchFlag),
 		.jmpAddress(dataOut_Extend),
 		.branchOffset(dataOut_Imm),
 		.addr(dataOut_PC),
-		.reset_count(debug_reset_count),
-		.jump_count(debug_jump_count),
-		.branch_count(debug_branch_count),
-		.increment_count(debug_increment_count)
 	);
 	
 	mux MUX_ADDR(

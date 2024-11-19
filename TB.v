@@ -1,13 +1,13 @@
 `timescale 1ns / 1ps
+
 module TB;
 
     reg Clk, Reset;
     reg [31:0] Data_BUS_READ, Prog_BUS_READ;
     wire [31:0] ADDR, Data_BUS_WRITE, ADDR_Prog, writeBack_out;
-    wire CS, WE, CS_P, branchFlag;
+    wire CS, WE, CS_P;
     wire [31:0] CS_P_OUT, pc_jmpAddress, pc_branchOffset;
-    wire pc_zeroFlag, pc_jmpFlag;
-    wire [4:0] reset_count, jump_count, branch_count;
+    wire pc_zeroFlag, pc_jmpFlag, branchFlag;
 
     // Instância do módulo CPU
     cpu dut (
@@ -27,29 +27,30 @@ module TB;
         .pc_branchOffset(pc_branchOffset),
         .pc_zeroFlag(pc_zeroFlag),
         .pc_jmpFlag(pc_jmpFlag),
-        .branchFlag(branchFlag),
-        .reset_count(reset_count),   // Conectando as variáveis de contagem
-        .jump_count(jump_count),     // Conectando as variáveis de contagem
-        .branch_count(branch_count)  // Conectando as variáveis de contagem
+        .branchFlag(branchFlag)
     );
 
-    // Inicialização e Clock
+    // Inicialização dos sinais
     initial begin
         Clk = 0;
-        Reset = 1;
-        #1 Reset = 0;
-        Data_BUS_READ = 32'h0;
+        Reset = 1; // Ativando o reset inicialmente
+        Data_BUS_READ = 32'h0; // Inicializando com 0
         Prog_BUS_READ = 32'h0;
 
-        // Libera o reset após 5 unidades de tempo
-        #1000 $stop;  // Termina a simulação após 100 unidades de tempo
+        // Liberando o reset após 50 unidades de tempo
+        #50 Reset = 0;
+
+        // Simulando algumas operações no barramento
+        #100 Data_BUS_READ = 32'h12345678; // Alterando dados do barramento
+        #100 Prog_BUS_READ = 32'h87654321; // Alterando dados do programa
+
+        // Tempo adicional para observar o comportamento
+        #1000 $stop; // Finaliza a simulação após 500 unidades de tempo
     end
 
-    always #5 Clk = ~Clk; // Geração de clock com período de 10 unidades de tempo
+    // Geração de clock com período de 10 unidades de tempo
+    always #5 Clk = ~Clk;
 
-    // Monitorando os sinais de depuração
-    initial begin
-        $monitor("Reset Count: %d, Jump Count: %d, Branch Count: %d", reset_count, jump_count, branch_count);
-    end
+    // Monitoramento dos sinais de depuração
 
 endmodule
