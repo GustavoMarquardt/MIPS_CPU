@@ -1,0 +1,65 @@
+module control_TB;
+    reg [31:0] in;       // Entrada de 32 bits
+    wire [24:0] out;     // Saída de 25 bits
+
+    // Instância do módulo de controle
+    control uut (
+        .in(in),
+        .out(out)
+    );
+
+    initial begin
+        // Teste para Load Word (opcode 6'h23)
+        in = 32'h8C110000; // Exemplo de instrução Load Word
+        #10;
+        $display("Teste Load Word: out = %b", out);
+
+        // Teste para Store Word (opcode 6'h24)
+        in = 32'hAC110000; // Exemplo de instrução Store Word
+        #10;
+        $display("Teste Store Word: out = %b", out);
+
+        // Teste para Branch on Not Equal (opcode 6'h26)
+        in = 32'h14000000; // Exemplo de instrução Branch on Not Equal
+        #10;
+        $display("Teste Branch on Not Equal: out = %b", out);
+
+        // Teste para ADD Immediate (opcode 6'h25)
+        in = 32'h20110000; // Exemplo de instrução ADD Immediate
+        #10;
+        $display("Teste ADD Immediate: out = %b", out);
+
+        // Teste para Jump (opcode 6'h27)
+        in = 32'h08000000; // Exemplo de instrução Jump
+        #10;
+        $display("Teste Jump: out = %b", out);
+
+        // Teste para ADD R (func 6'h20)
+        in = 32'h00221820; // Exemplo de instrução ADD R
+        #10;
+        $display("Teste ADD R: out = %b", out);
+
+        // Teste para SUB R (func 6'h22)
+        in = 32'h00221822; // Exemplo de instrução SUB R
+        #10;
+        $display("Teste SUB R: out = %b", out);
+
+        // Teste para MULT R (func 6'h32)
+        in = 32'h00221832; // Exemplo de instrução MULT R
+        #10;
+        $display("Teste MULT R: out = %b", out);
+
+        // Teste para AND R (func 6'h24)
+        in = 32'h00221824; // Exemplo de instrução AND R
+        #10;
+        $display("Teste AND R: out = %b", out);
+
+        // Teste para OR R (func 6'h25)
+        in = 32'h00221825; // Exemplo de instrução OR R
+        #10;
+        $display("Teste OR R: out = %b", out);
+
+        // Finaliza a simulação
+        $finish;
+    end
+endmodule

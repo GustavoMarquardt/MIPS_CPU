@@ -1,0 +1,14 @@
+module pc(
+	input Clk, Reset, 
+	output [31:0] addr
+);
+	reg [31:0]counter = 32'h0500;
+	always@(posedge Clk or posedge Reset) begin 
+		if(Reset)
+			counter <= 32'h0500;
+		else
+			counter <= counter + 32'h0001;
+	end
+
+	assign addr = counter;
+endmodule 

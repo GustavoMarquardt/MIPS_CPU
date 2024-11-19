@@ -1,0 +1,58 @@
+`timescale 1ns / 1ps
+
+module TB;
+    reg Clk, Reset;
+    reg [31:0] Data_BUS_READ, Prog_BUS_READ;
+    wire [31:0] ADDR, Data_BUS_WRITE, ADDR_Prog, writeBack_out,CS_P_OUT;
+    wire CS, WE, CS_P;
+
+    integer cycle_count; // Contador para ciclos de clock
+
+    // Instância do módulo CPU
+    cpu dut (
+			  .Clk(Clk),
+			  .Reset(Reset),
+			  .Data_BUS_READ(Data_BUS_READ),
+			  .Prog_BUS_READ(Prog_BUS_READ),
+			  .ADDR(ADDR),
+			  .Data_BUS_WRITE(Data_BUS_WRITE),
+			  .ADDR_Prog(ADDR_Prog),
+			  .CS(CS),
+			  .WE(WE),
+			  .CS_P(CS_P),
+			  .writeBack_out(writeBack_out), // Adicionando a conexão para writeBack_out
+			  .CS_P_OUT(CS_P_OUT),
+	 );
+
+    // Lógica de geração de clock
+    initial begin
+        Clk = 0;
+        forever #5 Clk = ~Clk; // Clock de 10 unidades de tempo
+    end
+
+    // Inicialização do reset e sinais de entrada
+    initial begin
+        Reset = 1;
+        Data_BUS_READ = 32'h0;
+        Prog_BUS_READ = 32'h0;
+        cycle_count = 0;
+        #10 Reset = 0;
+    end
+
+    // Contador para encerrar após 5 ciclos de clock
+    always @(posedge Clk) begin
+        if (Reset) begin
+            cycle_count <= 0;
+        end else begin
+            cycle_count <= cycle_count + 1;
+            if (cycle_count == 20) begin
+                $stop; // Finaliza a simulação após 5 ciclos
+            end
+        end
+    end
+
+    // Monitorando o sinal writeBack_out
+    initial begin
+        $monitor("Time = %0t | writeBack_out = %h", $time, writeBack_out);
+    end
+endmodule

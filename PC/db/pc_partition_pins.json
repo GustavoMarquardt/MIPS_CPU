@@ -1,0 +1,493 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[8]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[9]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[10]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[11]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[12]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[13]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[14]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[15]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[16]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[17]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[18]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[19]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[20]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[21]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[22]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[23]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[24]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[25]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[26]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[27]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[28]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[29]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[30]",
+					"strict" : false
+				},
+				{
+					"name" : "addr[31]",
+					"strict" : false
+				},
+				{
+					"name" : "reset_count[0]",
+					"strict" : false
+				},
+				{
+					"name" : "reset_count[1]",
+					"strict" : false
+				},
+				{
+					"name" : "reset_count[2]",
+					"strict" : false
+				},
+				{
+					"name" : "reset_count[3]",
+					"strict" : false
+				},
+				{
+					"name" : "reset_count[4]",
+					"strict" : false
+				},
+				{
+					"name" : "jump_count[0]",
+					"strict" : false
+				},
+				{
+					"name" : "jump_count[1]",
+					"strict" : false
+				},
+				{
+					"name" : "jump_count[2]",
+					"strict" : false
+				},
+				{
+					"name" : "jump_count[3]",
+					"strict" : false
+				},
+				{
+					"name" : "jump_count[4]",
+					"strict" : false
+				},
+				{
+					"name" : "branch_count[0]",
+					"strict" : false
+				},
+				{
+					"name" : "branch_count[1]",
+					"strict" : false
+				},
+				{
+					"name" : "branch_count[2]",
+					"strict" : false
+				},
+				{
+					"name" : "branch_count[3]",
+					"strict" : false
+				},
+				{
+					"name" : "branch_count[4]",
+					"strict" : false
+				},
+				{
+					"name" : "increment_count[0]",
+					"strict" : false
+				},
+				{
+					"name" : "increment_count[1]",
+					"strict" : false
+				},
+				{
+					"name" : "increment_count[2]",
+					"strict" : false
+				},
+				{
+					"name" : "increment_count[3]",
+					"strict" : false
+				},
+				{
+					"name" : "increment_count[4]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[0]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[0]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpFlag",
+					"strict" : false
+				},
+				{
+					"name" : "Clk",
+					"strict" : false
+				},
+				{
+					"name" : "Reset",
+					"strict" : false
+				},
+				{
+					"name" : "zeroFlag",
+					"strict" : false
+				},
+				{
+					"name" : "branchFlag",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[1]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[1]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[2]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[2]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[3]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[3]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[4]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[4]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[5]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[5]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[6]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[6]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[7]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[7]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[8]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[8]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[9]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[9]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[10]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[10]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[11]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[11]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[12]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[12]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[13]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[13]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[14]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[14]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[15]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[15]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[16]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[16]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[17]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[17]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[18]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[18]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[19]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[19]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[20]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[20]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[21]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[21]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[22]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[22]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[23]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[23]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[24]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[24]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[25]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[25]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[26]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[26]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[27]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[27]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[28]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[28]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[29]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[29]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[30]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[30]",
+					"strict" : false
+				},
+				{
+					"name" : "branchOffset[31]",
+					"strict" : false
+				},
+				{
+					"name" : "jmpAddress[31]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

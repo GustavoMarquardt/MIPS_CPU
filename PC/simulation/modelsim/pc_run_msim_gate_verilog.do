@@ -1,0 +1,17 @@
+transcript on
+if {[file exists gate_work]} {
+	vdel -lib gate_work -all
+}
+vlib gate_work
+vmap work gate_work
+
+vlog -vlog01compat -work work +incdir+. {pc_7_1200mv_100c_slow.vo}
+
+vlog -vlog01compat -work work +incdir+E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/PC {E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/PC/pc_TB.v}
+
+vsim -t 1ps +transport_int_delays +transport_path_delays -L altera_mf_ver -L altera_ver -L lpm_ver -L sgate_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L gate_work -L work -voptargs="+acc"  pc_TB
+
+add wave *
+view structure
+view signals
+run -all

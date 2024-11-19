@@ -1,0 +1,18 @@
+Analysis & Synthesis Status : Successful - Tue Nov 19 11:52:26 2024
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : cpu
+Top-level Entity Name : cpu
+Family : Cyclone IV GX
+Total logic elements : 3,281
+    Total combinational functions : 2,288
+    Dedicated logic registers : 1,259
+Total registers : 1259
+Total pins : 311
+Total virtual pins : 0
+Total memory bits : 65,536
+Embedded Multiplier 9-bit elements : 0
+Total GXB Receiver Channel PCS : 0
+Total GXB Receiver Channel PMA : 0
+Total GXB Transmitter Channel PCS : 0
+Total GXB Transmitter Channel PMA : 0
+Total PLLs : 1

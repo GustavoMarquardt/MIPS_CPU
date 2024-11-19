@@ -1,0 +1,146 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do pc_run_msim_gate_verilog.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work gate_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+. {pc_7_1200mv_100c_slow.vo}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:07:17 on Nov 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+." pc_7_1200mv_100c_slow.vo 
+# -- Compiling module pc
+# -- Compiling module hard_block
+# 
+# Top level modules:
+# 	pc
+# End time: 12:07:17 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/PC {E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/PC/pc_TB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:07:18 on Nov 19,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/PC" E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/PC/pc_TB.v 
+# -- Compiling module pc_TB
+# 
+# Top level modules:
+# 	pc_TB
+# End time: 12:07:18 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -L altera_mf_ver -L altera_ver -L lpm_ver -L sgate_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L gate_work -L work -voptargs="+acc"  pc_TB
+# vsim -t 1ps "+transport_int_delays" "+transport_path_delays" -L altera_mf_ver -L altera_ver -L lpm_ver -L sgate_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L gate_work -L work -voptargs=""+acc"" pc_TB 
+# Start time: 12:07:18 on Nov 19,2024
+# Loading work.pc_TB
+# Loading work.pc
+# Loading work.hard_block
+# Loading cycloneiv_ver.cycloneiv_io_obuf
+# Loading cycloneiv_ver.cycloneiv_io_ibuf
+# Loading cycloneiv_ver.cycloneiv_clkctrl
+# Loading cycloneiv_ver.cycloneiv_mux41
+# Loading cycloneiv_ver.cycloneiv_ena_reg
+# Loading cycloneiv_ver.cycloneiv_lcell_comb
+# Loading altera_ver.dffeas
+# SDF 10.5b Compiler 2016.10 Oct  5 2016
+# 
+# Loading instances from pc_7_1200mv_100c_v_slow.sdo
+# ** Warning: (vsim-3017) E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/PC/pc_TB.v(17): [TFMPC] - Too few port connections. Expected 12, found 8.
+#    Time: 0 ps  Iteration: 0  Instance: /pc_TB/uut File: pc_7_1200mv_100c_slow.vo
+# ** Warning: (vsim-3722) E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/PC/pc_TB.v(17): [TFMPC] - Missing connection for port 'reset_count'.
+# ** Warning: (vsim-3722) E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/PC/pc_TB.v(17): [TFMPC] - Missing connection for port 'jump_count'.
+# ** Warning: (vsim-3722) E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/PC/pc_TB.v(17): [TFMPC] - Missing connection for port 'branch_count'.
+# ** Warning: (vsim-3722) E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/PC/pc_TB.v(17): [TFMPC] - Missing connection for port 'increment_count'.
+# Loading altera_ver.PRIM_GDFF_LOW
+# Loading timing data from pc_7_1200mv_100c_v_slow.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /pc_TB File: E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/PC/pc_TB.v
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Time =                    0, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = xxxxxxxx
+# Time =                 3000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = xxxxXxxx
+# Time =                 4000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = xxxxXXxx
+# Time =                 4000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = xxxxXXxx
+# Time =                 4000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = xxxxXXxx
+# Time =                 4000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = xxXxXXxx
+# Time =                 4000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = xxXxXXXx
+# Time =                 4000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = xXXxXXXx
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = xXXxXXXx
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = xXXxXXXX
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = xXXxXXXX
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = xXXxXXXX
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXXxXXXX
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXXxXXXX
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXXxXXXX
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXXxXXXX
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXXxXXXX
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXXxXXXX
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXXXXXXX
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXXXXXXX
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXXXXXXX
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXXXXXX0
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXXXXXX0
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXXXXXX0
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXXXXXX0
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXXXXXX0
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXXXX9X0
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = XXX009X0
+# Time =                 5000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = X0X009X0
+# Time =                 6000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = X00009X0
+# Time =                 6000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = X00009f0
+# Time =                 6000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = 000009f0
+# Time =                10000, Reset = 1, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = 000009f0
+# Time =                14000, Reset = 1, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = 000009f4
+# Time =                19000, Reset = 1, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = 000009f0
+# Time =                20000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = 000009f0
+# Time =                30000, Reset = 0, ZeroFlag = 1, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = 000009f0
+# Time =                34000, Reset = 0, ZeroFlag = 1, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = 000009f4
+# Time =                40000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = 000009f4
+# Time =                43000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = 000009fc
+# Time =                44000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000000, JmpAddress = 00000000, addr = 000009f8
+# Time =                50000, Reset = 0, ZeroFlag = 0, BranchFlag = 1, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 00000000, addr = 000009f8
+# Time =                54000, Reset = 0, ZeroFlag = 0, BranchFlag = 1, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 00000000, addr = 000009fc
+# Time =                60000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 00000000, addr = 000009fc
+# Time =                63000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 00000000, addr = 000009dc
+# Time =                63000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 00000000, addr = 000009d4
+# Time =                64000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 00000000, addr = 00000994
+# Time =                64000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 00000000, addr = 00000b94
+# Time =                64000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 00000000, addr = 00000b90
+# Time =                64000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 00000000, addr = 00000a90
+# Time =                64000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 00000000, addr = 00000a10
+# Time =                70000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 1, BranchOffset = 00000010, JmpAddress = 10000000, addr = 00000a10
+# Time =                74000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 1, BranchOffset = 00000010, JmpAddress = 10000000, addr = 00000a14
+# Time =                80000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 10000000, addr = 00000a14
+# Time =                83000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 10000000, addr = 00000214
+# Time =                84000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 10000000, addr = 00000014
+# Time =                84000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 10000000, addr = 00000004
+# Time =                84000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 10000000, addr = 00000000
+# Time =                85000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 10000000, addr = 10000000
+# ** Error: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_primitives.v(294): $hold( posedge clk &&& reset:88490 ps, ena:88621 ps, 186 ps );
+#    Time: 88621 ps  Iteration: 0  Instance: /pc_TB/uut/\jump_count[4]~reg0 
+# ** Error: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_primitives.v(294): $hold( posedge clk &&& reset:88490 ps, ena:88621 ps, 186 ps );
+#    Time: 88621 ps  Iteration: 0  Instance: /pc_TB/uut/\jump_count[3]~reg0 
+# ** Error: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_primitives.v(294): $hold( posedge clk &&& reset:88490 ps, ena:88621 ps, 186 ps );
+#    Time: 88621 ps  Iteration: 0  Instance: /pc_TB/uut/\jump_count[2]~reg0 
+# ** Error: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_primitives.v(294): $hold( posedge clk &&& reset:88490 ps, ena:88621 ps, 186 ps );
+#    Time: 88621 ps  Iteration: 0  Instance: /pc_TB/uut/\jump_count[1]~reg0 
+# Time =                90000, Reset = 0, ZeroFlag = 1, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 10000000, addr = 10000000
+# Time =                94000, Reset = 0, ZeroFlag = 1, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 10000000, addr = 10000004
+# Time =               100000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 10000000, addr = 10000004
+# Time =               103000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 10000000, addr = 1000000c
+# Time =               104000, Reset = 0, ZeroFlag = 0, BranchFlag = 0, JmpFlag = 0, BranchOffset = 00000010, JmpAddress = 10000000, addr = 10000008
+# ** Note: $finish    : E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/PC/pc_TB.v(67)
+#    Time: 110 ns  Iteration: 0  Instance: /pc_TB
+# 1
+# Break in Module pc_TB at E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/PC/pc_TB.v line 67
+# End time: 12:08:18 on Nov 19,2024, Elapsed time: 0:01:00
+# Errors: 4, Warnings: 5

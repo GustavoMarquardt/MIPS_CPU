@@ -1,0 +1,91 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do control_run_msim_gate_verilog.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work gate_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+. {control.vo}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:23:20 on Nov 11,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+." control.vo 
+# -- Compiling module control
+# -- Compiling module hard_block
+# 
+# Top level modules:
+# 	control
+# End time: 14:23:20 on Nov 11,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+E:/TRABALHO_ODILON/MIPS_CPU/Control {E:/TRABALHO_ODILON/MIPS_CPU/Control/control_TB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:23:20 on Nov 11,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/TRABALHO_ODILON/MIPS_CPU/Control" E:/TRABALHO_ODILON/MIPS_CPU/Control/control_TB.v 
+# -- Compiling module control_TB
+# 
+# Top level modules:
+# 	control_TB
+# End time: 14:23:20 on Nov 11,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -L altera_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L gate_work -L work -voptargs="+acc"  control_TB
+# vsim -t 1ps "+transport_int_delays" "+transport_path_delays" -L altera_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L gate_work -L work -voptargs=""+acc"" control_TB 
+# Start time: 14:23:20 on Nov 11,2024
+# Loading work.control_TB
+# Loading work.control
+# Loading work.hard_block
+# Loading fiftyfivenm_ver.fiftyfivenm_lcell_comb
+# Loading fiftyfivenm_ver.fiftyfivenm_io_obuf
+# Loading fiftyfivenm_ver.fiftyfivenm_io_ibuf
+# Loading fiftyfivenm_ver.fiftyfivenm_clkctrl
+# Loading fiftyfivenm_ver.fiftyfivenm_mux41
+# Loading fiftyfivenm_ver.fiftyfivenm_ena_reg
+# Loading fiftyfivenm_ver.fiftyfivenm_unvm
+# Loading fiftyfivenm_ver.fiftyfivenm_adcblock
+# ** Warning: (vsim-3017) control.vo(1650): [TFMPC] - Too few port connections. Expected 8, found 7.
+#    Time: 0 ps  Iteration: 0  Instance: /control_TB/uut/\~QUARTUS_CREATED_ADC1~  File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/fiftyfivenm_atoms.v
+# ** Warning: (vsim-3722) control.vo(1650): [TFMPC] - Missing connection for port 'clk_dft'.
+# ** Warning: (vsim-3017) control.vo(1673): [TFMPC] - Too few port connections. Expected 8, found 7.
+#    Time: 0 ps  Iteration: 0  Instance: /control_TB/uut/\~QUARTUS_CREATED_ADC2~  File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/fiftyfivenm_atoms.v
+# ** Warning: (vsim-3722) control.vo(1673): [TFMPC] - Missing connection for port 'clk_dft'.
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Teste Load Word:
+# operation_code_tb: 100011, rs_tb: 00000, rt_tb: 10010, rd_tb: 10010, WR_regfile_tb: 1, mux_immediate_or_regB_tb: 1, ALU_sel_tb: 00, mul_Start_tb: 0, mux2_ALU_tb: 1, WR_mem_tb: 0, CS_WB_2_tb: 1, branchFlag_tb: 0, jmpFlag_tb: 0
+# Teste Store Word:
+# operation_code_tb: 100100, rs_tb: 00000, rt_tb: 00100, rd_tb: 00000, WR_regfile_tb: 0, mux_immediate_or_regB_tb: 1, ALU_sel_tb: 00, mul_Start_tb: 0, mux2_ALU_tb: 1, WR_mem_tb: 1, CS_WB_2_tb: 0, branchFlag_tb: 0, jmpFlag_tb: 0
+# Teste Branch on Not Equal:
+# operation_code_tb: 100101, rs_tb: 00000, rt_tb: 00001, rd_tb: 00001, WR_regfile_tb: 1, mux_immediate_or_regB_tb: 1, ALU_sel_tb: 00, mul_Start_tb: 0, mux2_ALU_tb: 1, WR_mem_tb: 0, CS_WB_2_tb: 0, branchFlag_tb: 0, jmpFlag_tb: 0
+# Teste ADD Immediate:
+# operation_code_tb: 100110, rs_tb: 00000, rt_tb: 00001, rd_tb: 00000, WR_regfile_tb: 0, mux_immediate_or_regB_tb: 0, ALU_sel_tb: 01, mul_Start_tb: 0, mux2_ALU_tb: 1, WR_mem_tb: 0, CS_WB_2_tb: 0, branchFlag_tb: 1, jmpFlag_tb: 0
+# Teste Or immediate:
+# operation_code_tb: 100111, rs_tb: 00000, rt_tb: 00000, rd_tb: 00000, WR_regfile_tb: 0, mux_immediate_or_regB_tb: 1, ALU_sel_tb: 00, mul_Start_tb: 0, mux2_ALU_tb: 1, WR_mem_tb: 0, CS_WB_2_tb: 0, branchFlag_tb: 0, jmpFlag_tb: 0
+# Teste ADD:
+# operation_code_tb: 001101, rs_tb: 00000, rt_tb: 00000, rd_tb: 00000, WR_regfile_tb: 0, mux_immediate_or_regB_tb: 1, ALU_sel_tb: 00, mul_Start_tb: 0, mux2_ALU_tb: 1, WR_mem_tb: 0, CS_WB_2_tb: 0, branchFlag_tb: 0, jmpFlag_tb: 0
+# Teste Subtract:
+# operation_code_tb: 001110, rs_tb: 00000, rt_tb: 00000, rd_tb: 00000, WR_regfile_tb: 0, mux_immediate_or_regB_tb: 1, ALU_sel_tb: 00, mul_Start_tb: 0, mux2_ALU_tb: 1, WR_mem_tb: 0, CS_WB_2_tb: 0, branchFlag_tb: 0, jmpFlag_tb: 0
+# Teste Multiplication:
+# operation_code_tb: 001111, rs_tb: 00000, rt_tb: 00000, rd_tb: 00000, WR_regfile_tb: 0, mux_immediate_or_regB_tb: 1, ALU_sel_tb: 00, mul_Start_tb: 0, mux2_ALU_tb: 1, WR_mem_tb: 0, CS_WB_2_tb: 0, branchFlag_tb: 0, jmpFlag_tb: 0
+# Erro: operation_code incorreto para Multiplication
+# Teste And:
+# operation_code_tb: 010000, rs_tb: 00000, rt_tb: 00000, rd_tb: 00000, WR_regfile_tb: 0, mux_immediate_or_regB_tb: 1, ALU_sel_tb: 00, mul_Start_tb: 0, mux2_ALU_tb: 1, WR_mem_tb: 0, CS_WB_2_tb: 0, branchFlag_tb: 0, jmpFlag_tb: 0
+# Teste Or:
+# operation_code_tb: 010001, rs_tb: 00000, rt_tb: 00000, rd_tb: 00000, WR_regfile_tb: 0, mux_immediate_or_regB_tb: 1, ALU_sel_tb: 00, mul_Start_tb: 0, mux2_ALU_tb: 1, WR_mem_tb: 0, CS_WB_2_tb: 0, branchFlag_tb: 0, jmpFlag_tb: 0
+# Teste para JUMP:
+# operation_code_tb: 000010, mux2_ALU_tb: 1, jmpFlag_tb: 1
+# ** Note: $finish    : E:/TRABALHO_ODILON/MIPS_CPU/Control/control_TB.v(131)
+#    Time: 110 ns  Iteration: 0  Instance: /control_TB
+# 1
+# Break in Module control_TB at E:/TRABALHO_ODILON/MIPS_CPU/Control/control_TB.v line 131
+# End time: 14:23:47 on Nov 11,2024, Elapsed time: 0:00:27
+# Errors: 0, Warnings: 4

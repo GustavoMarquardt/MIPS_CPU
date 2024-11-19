@@ -1,0 +1,74 @@
+`timescale 1ns/1ps
+
+module  registerfile_TB;
+  reg Clk;
+  reg we;
+  reg [4:0] rs, rt, rd;
+  reg [31:0] in;
+  wire [31:0] outA, outB;
+
+  // Instancia o módulo registerfile
+  registerfile uut (
+    .Clk(Clk),
+    .we(we),
+    .rs(rs),
+    .rt(rt),
+    .rd(rd),
+    .in(in),
+    .outA(outA),
+    .outB(outB)
+  );
+
+  // Gera um clock com período de 10 ns
+  initial begin
+    Clk = 0;
+    forever #5 Clk = ~Clk;
+  end
+
+  initial begin
+    // Inicialização dos sinais
+    we = 0;
+    rs = 0;
+    rt = 0;
+    rd = 0;
+    in = 0;
+    
+    // Aguarda o reset inicial
+    #10;
+
+    // Escreve no registrador 1
+    we = 1;
+    rd = 5'd1;
+    in = 32'hAAAA_AAAA;
+    #10;
+
+    // Desabilita a escrita e verifica a leitura de rs e rt
+    we = 0;
+    rs = 5'd1; // Lê o registrador 1
+    rt = 5'd2; // Lê o registrador 2
+    #10;
+    
+    // Verifica os valores lidos em outA e outB
+    $display("outA = %h, expected = %h", outA, 32'hAAAA_AAAA);
+    $display("outB = %h, expected = %h", outB, 32'h0);
+
+    // Escreve no registrador 2
+    we = 1;
+    rd = 5'd2;
+    in = 32'h5555_5555;
+    #10;
+
+    // Desabilita a escrita e verifica novamente
+    we = 0;
+    rs = 5'd1; // Lê o registrador 1
+    rt = 5'd2; // Lê o registrador 2
+    #10;
+    
+    // Verifica os valores lidos em outA e outB
+    $display("outA = %h, expected = %h", outA, 32'hAAAA_AAAA);
+    $display("outB = %h, expected = %h", outB, 32'h5555_5555);
+
+    // Finaliza a simulação
+    $stop;
+  end
+endmodule

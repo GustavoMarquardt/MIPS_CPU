@@ -1,0 +1,148 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/simulation/modelsim
+vACC
+Z1 !s110 1730743554
+!i10b 1
+!s100 5Jm>O2MjAcB64nS3mPNfj1
+IH8_`dOJ89QDT4YI@3=^Md3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1730484279
+8E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/ACC/ACC.v
+FE:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/ACC/ACC.v
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1730743554.000000
+!s107 E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/ACC/ACC.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/ACC|E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/ACC/ACC.v|
+!i113 1
+Z6 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/ACC
+Z7 tCvgOpt 0
+n@a@c@c
+vAdder
+R1
+!i10b 1
+!s100 <MZ?ZP35JgRMb<bbO^NhZ3
+I]C7K<:mCVRY_H3oV4=85X2
+R2
+R0
+R3
+8E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Adder/Adder.v
+FE:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Adder/Adder.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Adder/Adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Adder|E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Adder/Adder.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Adder
+R7
+n@adder
+vCONTROL
+R1
+!i10b 1
+!s100 2aW=Xi0UKZh_RZnD?[]TF3
+I8A?8OAV@8F6]A@hoc5QSh0
+R2
+R0
+R3
+8E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/CONTROL/CONTROL.v
+FE:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/CONTROL/CONTROL.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/CONTROL/CONTROL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/CONTROL|E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/CONTROL/CONTROL.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/CONTROL
+R7
+n@c@o@n@t@r@o@l
+vCounter
+R1
+!i10b 1
+!s100 ULaljU9NXZeIg13cFZWhE2
+IOEFhQzF[c`ogIQl:WfW<[0
+R2
+R0
+R3
+8E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Counter/Counter.v
+FE:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Counter/Counter.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Counter/Counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Counter|E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Counter/Counter.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Counter
+R7
+n@counter
+vMultiplicador
+R1
+!i10b 1
+!s100 4Z0gWC9eM]L7coCH5WWN20
+I`;Qle=N07Q=9T0?Ql:OAR3
+R2
+R0
+Z8 w1730484278
+8E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Multiplicador.v
+FE:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Multiplicador.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Multiplicador.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador|E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Multiplicador.v|
+!i113 1
+R6
+Z9 !s92 -vlog01compat -work work +incdir+E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador
+R7
+n@multiplicador
+vMultiplicador_TB
+R1
+!i10b 1
+!s100 zdR=0mGZBX3]GOmeWJK1X1
+ILi]m[240`_3A1:B0PX[4J1
+R2
+R0
+R8
+8E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Multiplicador_TB.v
+FE:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Multiplicador_TB.v
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Multiplicador_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador|E:/TRABALHO_ODILON/MIPS_CPU/Multiplicador/Multiplicador_TB.v|
+!i113 1
+R6
+R9
+R7
+n@multiplicador_@t@b

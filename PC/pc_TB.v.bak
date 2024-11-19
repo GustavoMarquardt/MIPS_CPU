@@ -1,0 +1,73 @@
+module pc_TB;
+
+  // Declaração de sinais
+  reg Clk;
+  reg Reset;
+  reg zeroFlag;
+  reg jmpFlag;
+  reg branchFlag;
+  reg [31:0] branchOffset;
+  reg [31:0] jmpAddress;
+  wire [31:0] addr;
+
+  // Instância do módulo pc
+  pc uut (
+    .Clk(Clk),
+    .Reset(Reset),
+    .zeroFlag(zeroFlag),
+    .jmpFlag(jmpFlag),
+    .branchFlag(branchFlag),
+    .branchOffset(branchOffset),
+    .jmpAddress(jmpAddress),
+    .addr(addr)
+  );
+
+  // Geração do clock
+  always begin
+    #5 Clk = ~Clk; // Um clock com período de 10 unidades de tempo
+  end
+
+  // Bloco inicial para aplicar estímulos
+  initial begin
+    // Inicialização dos sinais
+    Clk = 0;
+    Reset = 0;
+    zeroFlag = 0;
+    jmpFlag = 0;
+    branchFlag = 0;
+    branchOffset = 32'h00000000;
+    jmpAddress = 32'h00000000;
+
+    // Teste 1: Reset
+    #10 Reset = 1;
+    #10 Reset = 0;
+
+    // Teste 2: Verifica incremento do PC sem branch ou jump
+    #10 zeroFlag = 1; // Nenhum branch ou jump
+    #10 zeroFlag = 0;
+
+    // Teste 3: BranchFlag ativo com zeroFlag = 0
+    #10 branchFlag = 1;
+    branchOffset = 32'h00000010; // Testando com deslocamento 16 (4 * 4 = 16)
+    #10 branchFlag = 0;
+    
+    // Teste 4: JumpFlag ativo
+    #10 jmpFlag = 1;
+    jmpAddress = 32'h1000_0000; // Endereço de jump 0x1000_0000
+    #10 jmpFlag = 0;
+
+    // Teste 5: Verifica incremento do PC sem jump ou branch
+    #10 zeroFlag = 1;
+    #10 zeroFlag = 0;
+
+    // Finaliza simulação
+    #10 $finish;
+  end
+
+  // Monitoramento das saídas
+  initial begin
+    $monitor("Time = %t, Reset = %b, ZeroFlag = %b, BranchFlag = %b, JmpFlag = %b, BranchOffset = %h, JmpAddress = %h, addr = %h", 
+             $time, Reset, zeroFlag, branchFlag, jmpFlag, branchOffset, jmpAddress, addr);
+  end
+
+endmodule

@@ -1,0 +1,10 @@
+module mux (
+    input wire a,       // Entrada 0
+    input wire b,       // Entrada 1
+    input wire sel,     // Sinal de seleção
+    output wire out     // Saída
+);
+
+    assign out = (sel) ? b : a;
+
+endmodule

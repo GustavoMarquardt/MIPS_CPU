@@ -1,0 +1,24 @@
+module ADDRDecoding_Prog(
+	input [31:0] addr,
+	output reg cs
+);
+	reg [31:0] sup;
+	reg [31:0] inf;
+	
+	//Memoria interna 2700h a 2AFFh
+	always @ (*)
+	begin
+		sup = 32'h2AFF;
+		inf = 32'h9F0;
+		if(addr[31:0] >= inf) 
+		begin
+			if(addr[31:0] <= sup)
+				cs = 0;
+			else 
+				cs = 1;
+		end
+		else 
+			cs = 1;	
+	end 
+	
+endmodule 

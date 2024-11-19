@@ -1,0 +1,55 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/TRABALHO_ODILON/MIPS_CPU/Extend/simulation/modelsim
+vextend
+Z1 !s110 1730913280
+!i10b 1
+!s100 zj;SNI9OP?@5Y@A?X]AO13
+I:fd_K969RaNiz=N8HczdT1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1730913215
+8extend.vo
+Fextend.vo
+L0 31
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1730913280.000000
+!s107 extend.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|extend.vo|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+.
+Z6 tCvgOpt 0
+vextend_TB
+R1
+!i10b 1
+!s100 lX1g`aQ;Tz_jSKbRQ8HKF3
+I4>El^;me5CHUmCJF`:_o71
+R2
+R0
+w1730913149
+8E:/TRABALHO_ODILON/MIPS_CPU/Extend/extend_TB.v
+FE:/TRABALHO_ODILON/MIPS_CPU/Extend/extend_TB.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/TRABALHO_ODILON/MIPS_CPU/Extend/extend_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/TRABALHO_ODILON/MIPS_CPU/Extend|E:/TRABALHO_ODILON/MIPS_CPU/Extend/extend_TB.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+E:/TRABALHO_ODILON/MIPS_CPU/Extend
+R6
+nextend_@t@b

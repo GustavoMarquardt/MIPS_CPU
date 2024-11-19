@@ -1,0 +1,20 @@
+Fitter Status : Successful - Tue Nov 19 12:05:55 2024
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : pc
+Top-level Entity Name : pc
+Family : Cyclone IV GX
+Device : EP4CGX150DF31I7AD
+Timing Models : Final
+Total logic elements : 156 / 149,760 ( < 1 % )
+    Total combinational functions : 129 / 149,760 ( < 1 % )
+    Dedicated logic registers : 47 / 149,760 ( < 1 % )
+Total registers : 47
+Total pins : 121 / 508 ( 24 % )
+Total virtual pins : 0
+Total memory bits : 0 / 6,635,520 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 720 ( 0 % )
+Total GXB Receiver Channel PCS : 0 / 8 ( 0 % )
+Total GXB Receiver Channel PMA : 0 / 8 ( 0 % )
+Total GXB Transmitter Channel PCS : 0 / 8 ( 0 % )
+Total GXB Transmitter Channel PMA : 0 / 8 ( 0 % )
+Total PLLs : 0 / 8 ( 0 % )

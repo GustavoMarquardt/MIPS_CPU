@@ -1,0 +1,4 @@
+Info (10281): Verilog HDL Declaration information at cpu.v(92): object "CS_P_REG" differs only in case from object "CS_P_reg" in the same scope File: E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/cpu.v Line: 92
+Info (10281): Verilog HDL Declaration information at cpu.v(25): object "ctrl1" differs only in case from object "CTRL1" in the same scope File: E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/cpu.v Line: 25
+Info (10281): Verilog HDL Declaration information at cpu.v(25): object "ctrl2" differs only in case from object "CTRL2" in the same scope File: E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/cpu.v Line: 25
+Info (10281): Verilog HDL Declaration information at cpu.v(25): object "ctrl3" differs only in case from object "CTRL3" in the same scope File: E:/TRABALHO_ODILON/MIPS_CPYU/MIPS_CPU/cpu.v Line: 25

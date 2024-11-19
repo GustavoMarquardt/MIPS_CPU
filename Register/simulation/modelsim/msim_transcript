@@ -1,0 +1,51 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do register_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+E:/TRABALHO_ODILON/MIPS_CPU/Register {E:/TRABALHO_ODILON/MIPS_CPU/Register/register.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:52:52 on Nov 06,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/TRABALHO_ODILON/MIPS_CPU/Register" E:/TRABALHO_ODILON/MIPS_CPU/Register/register.v 
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+# End time: 13:52:52 on Nov 06,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+E:/TRABALHO_ODILON/MIPS_CPU/Register {E:/TRABALHO_ODILON/MIPS_CPU/Register/register_TB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:52:52 on Nov 06,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/TRABALHO_ODILON/MIPS_CPU/Register" E:/TRABALHO_ODILON/MIPS_CPU/Register/register_TB.v 
+# -- Compiling module register_TB
+# 
+# Top level modules:
+# 	register_TB
+# End time: 13:52:52 on Nov 06,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  register_TB
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" register_TB 
+# Start time: 13:52:53 on Nov 06,2024
+# Loading work.register_TB
+# Loading work.register
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $stop    : E:/TRABALHO_ODILON/MIPS_CPU/Register/register_TB.v(35)
+#    Time: 323 ns  Iteration: 0  Instance: /register_TB
+# Break in Module register_TB at E:/TRABALHO_ODILON/MIPS_CPU/Register/register_TB.v line 35
+# End time: 13:53:19 on Nov 06,2024, Elapsed time: 0:00:26
+# Errors: 0, Warnings: 0

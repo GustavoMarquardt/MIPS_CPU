@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/TRABALHO_ODILON/MIPS_CPU/ADDDecoding_Prog/simulation/modelsim
+vADDRDecoding_Prog
+Z1 !s110 1731348283
+!i10b 1
+!s100 8eV_?8hXXombm75E^VZ>I1
+IY6K^V1L2A`mX`mA3fOcES2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1731348216
+8E:/TRABALHO_ODILON/MIPS_CPU/ADDDecoding_Prog/ADDRDecoding_Prog.v
+FE:/TRABALHO_ODILON/MIPS_CPU/ADDDecoding_Prog/ADDRDecoding_Prog.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1731348283.000000
+!s107 E:/TRABALHO_ODILON/MIPS_CPU/ADDDecoding_Prog/ADDRDecoding_Prog.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/TRABALHO_ODILON/MIPS_CPU/ADDDecoding_Prog|E:/TRABALHO_ODILON/MIPS_CPU/ADDDecoding_Prog/ADDRDecoding_Prog.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+E:/TRABALHO_ODILON/MIPS_CPU/ADDDecoding_Prog
+Z7 tCvgOpt 0
+n@a@d@d@r@decoding_@prog
+vADDRDecoding_Prog_TB
+R1
+!i10b 1
+!s100 ^HAL@SIEHD:8RiVeGMlJ70
+IU;HGXHM[RODjCFR7IadTc3
+R2
+R0
+w1731346453
+8E:/TRABALHO_ODILON/MIPS_CPU/ADDDecoding_Prog/ADDRDecoding_Prog_TB.v
+FE:/TRABALHO_ODILON/MIPS_CPU/ADDDecoding_Prog/ADDRDecoding_Prog_TB.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/TRABALHO_ODILON/MIPS_CPU/ADDDecoding_Prog/ADDRDecoding_Prog_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/TRABALHO_ODILON/MIPS_CPU/ADDDecoding_Prog|E:/TRABALHO_ODILON/MIPS_CPU/ADDDecoding_Prog/ADDRDecoding_Prog_TB.v|
+!i113 1
+R5
+R6
+R7
+n@a@d@d@r@decoding_@prog_@t@b

@@ -1,0 +1,158 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do InstMem_run_msim_gate_verilog.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work gate_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+. {InstMem_7_1200mv_100c_slow.vo}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:08:58 on Nov 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+." InstMem_7_1200mv_100c_slow.vo 
+# -- Compiling module InstMem
+# -- Compiling module hard_block
+# 
+# Top level modules:
+# 	InstMem
+# End time: 13:08:58 on Nov 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+E:/TRABALHO_ODILON/MIPS_CPU/InstMem {E:/TRABALHO_ODILON/MIPS_CPU/InstMem/InstMem_TB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:08:58 on Nov 12,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/TRABALHO_ODILON/MIPS_CPU/InstMem" E:/TRABALHO_ODILON/MIPS_CPU/InstMem/InstMem_TB.v 
+# -- Compiling module InstMem_TB
+# 
+# Top level modules:
+# 	InstMem_TB
+# End time: 13:08:58 on Nov 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -L altera_mf_ver -L altera_ver -L lpm_ver -L sgate_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L gate_work -L work -voptargs="+acc"   InstMem_TB
+# vsim -t 1ps "+transport_int_delays" "+transport_path_delays" -L altera_mf_ver -L altera_ver -L lpm_ver -L sgate_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L gate_work -L work -voptargs=""+acc"" InstMem_TB 
+# Start time: 13:08:58 on Nov 12,2024
+# Loading work.InstMem_TB
+# Loading work.InstMem
+# Loading work.hard_block
+# Loading cycloneiv_ver.cycloneiv_io_obuf
+# Loading cycloneiv_ver.cycloneiv_io_ibuf
+# Loading cycloneiv_ver.cycloneiv_clkctrl
+# Loading cycloneiv_ver.cycloneiv_mux41
+# Loading cycloneiv_ver.cycloneiv_ena_reg
+# Loading cycloneiv_ver.cycloneiv_ram_block
+# Loading cycloneiv_ver.cycloneiv_ram_register
+# Loading cycloneiv_ver.cycloneiv_ram_pulse_generator
+# SDF 10.5b Compiler 2016.10 Oct  5 2016
+# 
+# Loading instances from InstMem_7_1200mv_100c_v_slow.sdo
+# Loading timing data from InstMem_7_1200mv_100c_v_slow.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /InstMem_TB File: E:/TRABALHO_ODILON/MIPS_CPU/InstMem/InstMem_TB.v
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Time = 0 | Address = 000 | Data = xxxxxxxx
+# Time = 3000 | Address = 000 | Data = xxxxXxxx
+# Time = 3000 | Address = 000 | Data = xxxxXXxx
+# Time = 4000 | Address = 000 | Data = xxxXXXxx
+# Time = 4000 | Address = 000 | Data = xxxXXXxx
+# Time = 4000 | Address = 000 | Data = xXxXXXxx
+# Time = 4000 | Address = 000 | Data = xXxXXXxx
+# Time = 4000 | Address = 000 | Data = xXXXXXxx
+# Time = 4000 | Address = 000 | Data = xXXXXXxx
+# Time = 4000 | Address = 000 | Data = xXXX0Xxx
+# Time = 4000 | Address = 000 | Data = xXXX0Xxx
+# Time = 4000 | Address = 000 | Data = xXXX0Xxx
+# Time = 4000 | Address = 000 | Data = xXXX0Xxx
+# Time = 4000 | Address = 000 | Data = xXX00Xxx
+# Time = 4000 | Address = 000 | Data = xXX000xx
+# Time = 4000 | Address = 000 | Data = xXX000xx
+# Time = 4000 | Address = 000 | Data = xXX000Xx
+# Time = 4000 | Address = 000 | Data = xXX000Xx
+# Time = 4000 | Address = 000 | Data = xXX000Xx
+# Time = 4000 | Address = 000 | Data = xX0000Xx
+# Time = 4000 | Address = 000 | Data = xX0000Xx
+# Time = 4000 | Address = 000 | Data = xX0000XX
+# Time = 4000 | Address = 000 | Data = xX0000XX
+# Time = 4000 | Address = 000 | Data = X00000XX
+# Time = 4000 | Address = 000 | Data = X00000XX
+# Time = 4000 | Address = 000 | Data = X000000X
+# Time = 4000 | Address = 000 | Data = X000000X
+# Time = 4000 | Address = 000 | Data = X000000X
+# Time = 4000 | Address = 000 | Data = 0000000X
+# Time = 4000 | Address = 000 | Data = 0000000X
+# Time = 6000 | Address = 000 | Data = 00000000
+# Time = 20000 | Address = 001 | Data = 00000000
+# Time = 30000 | Address = 002 | Data = 00000000
+# Time = 40000 | Address = 003 | Data = 00000000
+# Time = 50000 | Address = 004 | Data = 00000000
+# Time = 60000 | Address = 00a | Data = 00000000
+# Time = 65000 | Address = 00a | Data = 00020000
+# Time = 65000 | Address = 00a | Data = 000a0000
+# Time = 66000 | Address = 00a | Data = 000e0000
+# Time = 66000 | Address = 00a | Data = 040e0000
+# Time = 66000 | Address = 00a | Data = 041e0000
+# Time = 66000 | Address = 00a | Data = 041e0020
+# Time = 66000 | Address = 00a | Data = 4c1e0020
+# Time = 66000 | Address = 00a | Data = cc1e0020
+# Time = 66000 | Address = 00a | Data = dc1e0020
+# Time = 66000 | Address = 00a | Data = fc1e0020
+# Time = 70000 | Address = 014 | Data = fc1e0020
+# Time = 75000 | Address = 014 | Data = fc1c0020
+# Time = 75000 | Address = 014 | Data = fc140020
+# Time = 75000 | Address = 014 | Data = fc100020
+# Time = 76000 | Address = 014 | Data = f8100020
+# Time = 76000 | Address = 014 | Data = f8000020
+# Time = 76000 | Address = 014 | Data = f8000000
+# Time = 76000 | Address = 014 | Data = b0000000
+# Time = 76000 | Address = 014 | Data = 30000000
+# Time = 76000 | Address = 014 | Data = 20000000
+# Time = 76000 | Address = 014 | Data = 00000000
+# Time = 80000 | Address = 064 | Data = 00000000
+# Time = 85000 | Address = 064 | Data = 01000000
+# Time = 85000 | Address = 064 | Data = 01200000
+# Time = 85000 | Address = 064 | Data = 01220000
+# Time = 85000 | Address = 064 | Data = 012a0000
+# Time = 86000 | Address = 064 | Data = 032a0000
+# Time = 86000 | Address = 064 | Data = 032b0000
+# Time = 86000 | Address = 064 | Data = 032f0000
+# Time = 86000 | Address = 064 | Data = 03af0000
+# Time = 86000 | Address = 064 | Data = 03ef0000
+# Time = 86000 | Address = 064 | Data = 03ff0000
+# Time = 86000 | Address = 064 | Data = 4bff0000
+# Time = 86000 | Address = 064 | Data = cbff0000
+# Time = 86000 | Address = 064 | Data = dbff0000
+# Time = 86000 | Address = 064 | Data = fbff0000
+# Time = 87000 | Address = 064 | Data = fbff0001
+# Time = 90000 | Address = 1f4 | Data = fbff0001
+# Time = 95000 | Address = 1f4 | Data = faff0001
+# Time = 95000 | Address = 1f4 | Data = fadf0001
+# Time = 95000 | Address = 1f4 | Data = fadd0001
+# Time = 95000 | Address = 1f4 | Data = fad50001
+# Time = 95000 | Address = 1f4 | Data = f8d50001
+# Time = 95000 | Address = 1f4 | Data = f8d40001
+# Time = 95000 | Address = 1f4 | Data = f8d00001
+# Time = 96000 | Address = 1f4 | Data = f8500001
+# Time = 96000 | Address = 1f4 | Data = f8100001
+# Time = 96000 | Address = 1f4 | Data = f8000001
+# Time = 96000 | Address = 1f4 | Data = b0000001
+# Time = 96000 | Address = 1f4 | Data = 30000001
+# Time = 96000 | Address = 1f4 | Data = 20000001
+# Time = 96000 | Address = 1f4 | Data = 00000001
+# Time = 97000 | Address = 1f4 | Data = 00000000
+# Time = 100000 | Address = 3ff | Data = 00000000
+# ** Note: $finish    : E:/TRABALHO_ODILON/MIPS_CPU/InstMem/InstMem_TB.v(48)
+#    Time: 110 ns  Iteration: 0  Instance: /InstMem_TB
+# 1
+# Break in Module InstMem_TB at E:/TRABALHO_ODILON/MIPS_CPU/InstMem/InstMem_TB.v line 48
+# End time: 13:27:13 on Nov 12,2024, Elapsed time: 0:18:15
+# Errors: 0, Warnings: 0

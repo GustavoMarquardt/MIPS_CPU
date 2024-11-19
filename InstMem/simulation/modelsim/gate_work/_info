@@ -1,0 +1,78 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/TRABALHO_ODILON/MIPS_CPU/InstMem/simulation/modelsim
+vhard_block
+Z1 !s110 1731427738
+!i10b 1
+!s100 E`LUembK=_Tc2Ez=EaN[21
+Ijh[FRORDDi:HmYJC3=U;U0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1731427710
+Z4 8InstMem_7_1200mv_100c_slow.vo
+Z5 FInstMem_7_1200mv_100c_slow.vo
+L0 1021
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1731427738.000000
+Z8 !s107 InstMem_7_1200mv_100c_slow.vo|
+Z9 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|InstMem_7_1200mv_100c_slow.vo|
+!i113 1
+Z10 o-vlog01compat -work work
+Z11 !s92 -vlog01compat -work work +incdir+.
+Z12 tCvgOpt 0
+vInstMem
+R1
+!i10b 1
+!s100 AGzP<fg7efz:e2XM0aWl<0
+Id9[z91kUF:JM`gkWgZ0_V2
+R2
+R0
+R3
+R4
+R5
+L0 31
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+n@inst@mem
+vInstMem_TB
+R1
+!i10b 1
+!s100 k09gFBA0k;2ha09RL37gQ0
+IcdDoZK4EL89VXKD?@A8c?0
+R2
+R0
+w1731427509
+8E:/TRABALHO_ODILON/MIPS_CPU/InstMem/InstMem_TB.v
+FE:/TRABALHO_ODILON/MIPS_CPU/InstMem/InstMem_TB.v
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+!s107 E:/TRABALHO_ODILON/MIPS_CPU/InstMem/InstMem_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/TRABALHO_ODILON/MIPS_CPU/InstMem|E:/TRABALHO_ODILON/MIPS_CPU/InstMem/InstMem_TB.v|
+!i113 1
+R10
+!s92 -vlog01compat -work work +incdir+E:/TRABALHO_ODILON/MIPS_CPU/InstMem
+R12
+n@inst@mem_@t@b

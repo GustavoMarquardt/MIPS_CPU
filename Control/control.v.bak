@@ -1,0 +1,90 @@
+module control(
+	input [31:0] in,
+	output [22:0] out
+);	
+	// Grupo 3 
+	reg [5:0] operation_code, operation;
+	reg [4:0] rs, rt, rd;
+	
+	reg [1:0] ALU_sel;
+	reg mul_Start, mux1_ALU, mux2_ALU;
+	reg WR_mem, WB_mux_sel, WR_regfile;
+	// assign out  = jmpAddress;
+	// assign out = jmpFlag;
+	assign out = {rs, rt, rd, WR_regfile, mux1_ALU, ALU_sel, mul_Start,  mux2_ALU, WR_mem, WB_mux_sel};
+
+	always @ (in) 
+	begin
+		operation_code = in[31:26];
+		operation = in[5:0];
+		rs = in[25:21];
+		rt = in[20:16];
+		case(operation_code)
+			6'h0E: 					
+			begin
+				ALU_sel = 2'b00; rd = rt;           	
+				WR_regfile = 1; WR_mem = 0;   		 			
+				mux1_ALU = 1; mux2_ALU = 1;		 	
+				mul_Start = 0; WB_mux_sel = 1;		
+			end
+			
+			6'h0F: 				 	
+			begin
+				ALU_sel = 2'b00; rd = rt;       	
+				WR_regfile = 0; WR_mem = 1;			
+				mux1_ALU = 1; mux2_ALU = 1;		
+				mul_Start = 0; WB_mux_sel = 1;	
+			end
+			
+			6'h0D: 					
+			begin  
+				rd = in[15:11]; WR_regfile = 1; 			
+				mux1_ALU = 0; mul_Start = 0;			
+				WB_mux_sel = 0; WR_mem = 0;			
+				
+				case(operation)
+					6'h20:  			
+					begin 
+						ALU_sel = 2'b00; mux2_ALU = 1;   	
+					end
+					
+					6'h22: 			
+					begin
+						ALU_sel = 2'b01; mux2_ALU = 1;		
+					end
+					
+					6'h32: 			
+					begin
+						ALU_sel = 2'b0; mul_Start = 1; mux2_ALU = 0;  
+					end
+					
+					6'h24:
+					begin
+						ALU_sel = 2'b10; mux2_ALU = 1; 		
+					end
+					
+					6'h25:
+					begin
+						ALU_sel = 2'b11; mux2_ALU = 1; 		
+					end
+					
+					default:
+					begin
+						ALU_sel = 2'b10; mux2_ALU = 1; 
+					end
+					
+				endcase
+			end
+			
+			default: 
+			begin
+				rd = 5'h1F; WR_regfile = 0;
+				mux1_ALU = 0; ALU_sel = 0;
+				mul_Start = 0; mux2_ALU = 1;
+				WR_mem = 0; WB_mux_sel = 0;				
+			end
+			
+		endcase
+	end
+
+endmodule 

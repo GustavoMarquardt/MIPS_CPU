@@ -1,0 +1,55 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/TRABALHO_ODILON/MIPS_CPU/ALU/simulation/modelsim
+valu
+Z1 !s110 1730481531
+!i10b 1
+!s100 ?A`]RL0Z[bLmkF8lg1Jc93
+I_BA]j]IK[2lX:>bFf>an30
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1730481386
+8E:/TRABALHO_ODILON/MIPS_CPU/ALU/alu.v
+FE:/TRABALHO_ODILON/MIPS_CPU/ALU/alu.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1730481531.000000
+!s107 E:/TRABALHO_ODILON/MIPS_CPU/ALU/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/TRABALHO_ODILON/MIPS_CPU/ALU|E:/TRABALHO_ODILON/MIPS_CPU/ALU/alu.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+E:/TRABALHO_ODILON/MIPS_CPU/ALU
+Z7 tCvgOpt 0
+valu_TB
+R1
+!i10b 1
+!s100 >06h80Hz`B]>F9>ZcnS0J3
+IoJo8EcB[c]gSJQ37`bmhX1
+R2
+R0
+w1730481455
+8E:/TRABALHO_ODILON/MIPS_CPU/ALU/alu_TB.v
+FE:/TRABALHO_ODILON/MIPS_CPU/ALU/alu_TB.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/TRABALHO_ODILON/MIPS_CPU/ALU/alu_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/TRABALHO_ODILON/MIPS_CPU/ALU|E:/TRABALHO_ODILON/MIPS_CPU/ALU/alu_TB.v|
+!i113 1
+R5
+R6
+R7
+nalu_@t@b

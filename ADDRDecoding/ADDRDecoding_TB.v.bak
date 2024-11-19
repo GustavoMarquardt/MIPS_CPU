@@ -1,0 +1,60 @@
+module ADDRDecoding_TB;
+
+    // Sinais de entrada
+    reg [31:0] addr;
+    reg WE;
+    
+    // Sinais de saída
+    wire cs, iWE;
+    wire [31:0] iAddress;
+    
+    // Instância do módulo a ser testado
+    ADDRDecoding uut (
+        .addr(addr),
+        .WE(WE),
+        .cs(cs),
+        .iWE(iWE),
+        .iAddress(iAddress)
+    );
+    
+    initial begin
+        // Teste 1: Endereço dentro do intervalo 6F0h a 1713h, WE = 0
+        addr = 32'h06F0; // Endereço inicial
+        WE = 0;
+        #10; // Atraso para simulação
+        $display("Test 1 - addr: %h, cs: %b, iWE: %b, iAddress: %h", addr, cs, iWE, iAddress);
+        
+        // Teste 2: Endereço dentro do intervalo 6F0h a 1713h, WE = 1
+        addr = 32'h1000; // Endereço dentro do intervalo
+        WE = 1;
+        #10; // Atraso para simulação
+        $display("Test 2 - addr: %h, cs: %b, iWE: %b, iAddress: %h", addr, cs, iWE, iAddress);
+        
+        // Teste 3: Endereço fora do intervalo 6F0h a 1713h
+        addr = 32'h1800; // Endereço fora do intervalo
+        WE = 0;
+        #10; // Atraso para simulação
+        $display("Test 3 - addr: %h, cs: %b, iWE: %b, iAddress: %h", addr, cs, iWE, iAddress);
+        
+        // Teste 4: Endereço dentro do intervalo 6F0h a 1713h, WE = 0
+        addr = 32'h1700; // Endereço dentro do intervalo
+        WE = 0;
+        #10; // Atraso para simulação
+        $display("Test 4 - addr: %h, cs: %b, iWE: %b, iAddress: %h", addr, cs, iWE, iAddress);
+        
+        // Teste 5: Endereço abaixo do intervalo 6F0h a 1713h
+        addr = 32'h06F1; // Endereço logo após o limite inferior
+        WE = 0;
+        #10; // Atraso para simulação
+        $display("Test 5 - addr: %h, cs: %b, iWE: %b, iAddress: %h", addr, cs, iWE, iAddress);
+        
+        // Teste 6: Endereço acima do intervalo 6F0h a 1713h
+        addr = 32'h1800; // Endereço acima do limite superior
+        WE = 0;
+        #10; // Atraso para simulação
+        $display("Test 6 - addr: %h, cs: %b, iWE: %b, iAddress: %h", addr, cs, iWE, iAddress);
+        
+        $finish; // Encerra a simulação
+    end
+    
+endmodule

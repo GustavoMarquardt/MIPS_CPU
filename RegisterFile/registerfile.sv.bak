@@ -1,0 +1,25 @@
+module registerfile (
+	input Clk, Reset, we,
+	input [4:0] rs, rt, rd,
+	input [31:0] in,
+	output [31:0] outA, outB	
+);	
+	integer j;
+	reg [31:0] register [31:0];
+	
+	assign outA = register[rs];
+	assign outB = register[rt];
+	
+	always @ (posedge Clk)begin 
+		
+		if (Reset)
+			for(j = 0; j <= 31; j = j+1) begin
+				register[j] <= 32'h0;
+		end
+		else if (we)
+				register[rd] <= in;
+	end 
+	
+
+
+endmodule

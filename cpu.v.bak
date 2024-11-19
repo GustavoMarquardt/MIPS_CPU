@@ -1,0 +1,204 @@
+
+module cpu(
+	input Clk, Reset,
+	input [31:0] Data_BUS_READ,
+	output [31:0] ADDR, Data_BUS_WRITE,
+	output CS, WR_RD
+);
+	(*keep=1*)wire [31:0] dataOut_Inst_M;
+	(*keep=1*)wire [31:0] addressCorrection_mem1, addressCorrection_mem2;
+	(*keep=1*)wire [31:0] dataOut_RF1, dataOut_RF2;
+	(*keep=1*)wire [31:0] writeBack, register_A,register_B;	
+	(*keep=1*)wire [31:0] dataOut_Extend, dataOut_Imm, dataOut_M1,dataOut_M2, dataOut_M3;
+	(*keep=1*)wire [31:0] dataOut_ALU, dataOut_Mult, dataOut_D1, dataOut_D2, dout;	 
+	(*keep=1*)wire [22:0] ctrl0, ctrl1, ctrl2, ctrl3;
+	(*keep=1*)wire [31:0] dataOut_PC;
+	(*keep=1*)wire Clk_Mult, Clk_System;
+	(*keep=1*)wire dataOut_M;
+
+	pll PLL (
+		.areset (Reset),
+		.inclk0 (Clk),
+		.c0 (Clk_Mult),
+		.c1 (Clk_System)
+	);	
+	
+	assign ADDR = dataOut_D1;
+	assign WR_RD = ctrl2[1];
+	assign addressCorrection_mem1 = dataOut_PC - 32'h9F0;
+	assign addressCorrection_mem2 = dataOut_D1 - 32'h6F0;
+	
+//Instruction Fetch
+	
+	instructionmemory Intruction_Memory(
+		.clk(Clk_System),
+		.addr(addressCorrection_mem1[9:0]),
+		.dataOut(dataOut_Inst_M)
+	);
+	
+	pc PC(
+		.Clk(Clk_System),
+		.Reset(Reset),
+		.addr(dataOut_PC)
+	);
+	
+//Instruction Decode
+
+	registerfile Register_File(
+		.Clk(Clk_System),
+		.Reset(Reset),
+		.we(ctrl3[7]),
+		.rs(ctrl0[22:18]),
+		.rt(ctrl0[17:13]),
+		.rd(ctrl3[12:8]),
+		.in(writeBack),
+		.outA(dataOut_RF1),
+		.outB(dataOut_RF2)
+	);
+	
+	control Control(
+		.in(dataOut_Inst_M),
+		.out(ctrl0)
+	);
+	 
+	
+	extend Extend(
+		.in(dataOut_Inst_M),
+		.out(dataOut_Extend)
+	);
+	
+	Register A(
+		.Clk(Clk_System),
+		.Reset(Reset),
+		.in(dataOut_RF1),
+		.out(register_A)
+	);
+	 
+	Register B(
+		.Clk(Clk_System),
+		.Reset(Reset),
+		.in(dataOut_RF2),
+		.out(register_B)
+   );
+	
+	Register IMM(
+		.Clk(Clk_System),
+		.Reset(Reset),
+		.in(dataOut_Extend),
+		.out(dataOut_Imm)
+	);
+
+	Register CTRL1 (
+		.Clk(Clk_System),
+		.Reset(Reset),
+		.in(ctrl0[22:0]),
+		.out(ctrl1[22:0])
+	);
+	 
+	 
+//Execute
+
+	Multiplicador MULTIPLICADOR(
+		.Clk(Clk_Mult),
+		.St(ctrl1[3]),
+		.Multiplicador(register_A[15:0]),
+		.Multiplicando(register_B[15:0]),
+		.Produto(dataOut_Mult)
+	);
+	
+	mux MUX1(
+		.sel(ctrl1[6]),
+		.data1(register_B),
+		.data2(dataOut_Imm),
+		.out(dataOut_M1)
+	);
+	  
+	alu ALU(
+		.sel(ctrl1[5:4]),
+		.a(register_A),
+		.b(dataOut_M1),
+		.out(dataOut_ALU)
+	);
+
+	mux MUX2(
+		.sel(ctrl1[2]),
+		.data1(dataOut_Mult),
+		.data2(dataOut_ALU),
+		.out(dataOut_M2)
+	);
+	
+	Register D1(
+		.Clk(Clk_System),
+		.Reset(Reset),
+		.in(dataOut_M2),
+		.out(dataOut_D1)
+	);
+ 
+	Register B2(
+		.Clk(Clk_System),
+		.Reset(Reset),
+		.in(register_B),
+		.out(Data_BUS_WRITE)
+	);
+	
+	Register #(23) CTRL2(
+		.Clk(Clk_System),
+		.Reset(Reset),
+		.in(ctrl1[22:0]),
+		.out(ctrl2[22:0])
+	);	 
+
+//Memory 
+	 
+	ADDRDecoding ADDR_Decoding (
+		.addr(dataOut_D1),
+		.cs(CS)
+	);
+
+	datamemory Data_Memory (
+		.Clk(Clk_System),
+		.wr(ctrl2[1]),
+		.addr(addressCorrection_mem2[9:0]),
+		.dataIn(Data_BUS_WRITE),
+		.dataOut(dout)
+	);
+	
+	mux MUX3(
+		.sel(dataOut_M),
+		.data1(dout),
+		.data2(Data_BUS_READ),
+		.out(dataOut_M3)
+	);
+	
+	Register D2(
+		.Clk(Clk_System),
+		.Reset(Reset),
+		.in(dataOut_D1),
+		.out(dataOut_D2)
+	);
+	
+	Register #(1) M (
+		.Clk(Clk_System),
+		.Reset(Reset),
+		.in(CS),
+		.out(dataOut_M)
+	);
+	
+
+	Register #(23) CTRL3(
+		.Clk(Clk_System),
+		.Reset(Reset),
+		.in(ctrl2[22:0]),
+		.out(ctrl3[22:0])
+	);
+
+//Write Back
+	mux MUX4(
+		.sel(ctrl3[0]),
+		.data1(dataOut_D2),
+		.data2(dataOut_M3),
+		.out(writeBack)
+	);
+	
+	
+ endmodule 
