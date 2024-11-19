@@ -137,7 +137,7 @@ module cpu(
 		
 	control Control(
 		.in(dataOut_M1),
-		.out(ctrl0),
+		.out(ctrl0)
 	);
 	
 	extend Extend(

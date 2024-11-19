@@ -1,62 +1,55 @@
-module TB_pc;
+`timescale 1ns / 1ps
+module TB;
 
-    // Declaração dos sinais
-    reg Clk, Reset, zeroFlag, jmpFlag, branchFlag;
-    reg [31:0] branchOffset, jmpAddress;
-    wire [31:0] addr;
-    wire [4:0] reset_count, jump_count, branch_count, increment_count;
+    reg Clk, Reset;
+    reg [31:0] Data_BUS_READ, Prog_BUS_READ;
+    wire [31:0] ADDR, Data_BUS_WRITE, ADDR_Prog, writeBack_out;
+    wire CS, WE, CS_P, branchFlag;
+    wire [31:0] CS_P_OUT, pc_jmpAddress, pc_branchOffset;
+    wire pc_zeroFlag, pc_jmpFlag;
+    wire [4:0] reset_count, jump_count, branch_count;
 
-    // Instância do módulo pc
-    pc uut (
+    // Instância do módulo CPU
+    cpu dut (
         .Clk(Clk),
         .Reset(Reset),
-        .zeroFlag(zeroFlag),
-        .jmpFlag(jmpFlag),
+        .Data_BUS_READ(Data_BUS_READ),
+        .Prog_BUS_READ(Prog_BUS_READ),
+        .ADDR(ADDR),
+        .Data_BUS_WRITE(Data_BUS_WRITE),
+        .ADDR_Prog(ADDR_Prog),
+        .CS(CS),
+        .WE(WE),
+        .CS_P(CS_P),
+        .writeBack_out(writeBack_out),
+        .CS_P_OUT(CS_P_OUT),
+        .pc_jmpAddress(pc_jmpAddress),
+        .pc_branchOffset(pc_branchOffset),
+        .pc_zeroFlag(pc_zeroFlag),
+        .pc_jmpFlag(pc_jmpFlag),
         .branchFlag(branchFlag),
-        .branchOffset(branchOffset),
-        .jmpAddress(jmpAddress),
-        .addr(addr),
-        .reset_count(reset_count),
-        .jump_count(jump_count),
-        .branch_count(branch_count),
-        .increment_count(increment_count)
+        .reset_count(reset_count),   // Conectando as variáveis de contagem
+        .jump_count(jump_count),     // Conectando as variáveis de contagem
+        .branch_count(branch_count)  // Conectando as variáveis de contagem
     );
 
-    // Inicialização dos sinais
+    // Inicialização e Clock
     initial begin
         Clk = 0;
         Reset = 1;
-        zeroFlag = 0;
-        jmpFlag = 0;
-        branchFlag = 0;
-        branchOffset = 32'h4;  // Definindo um valor para o offset do branch
-        jmpAddress = 32'h1000; // Definindo um endereço para o jump
+        #1 Reset = 0;
+        Data_BUS_READ = 32'h0;
+        Prog_BUS_READ = 32'h0;
 
-        // Libera o reset após 50 unidades de tempo
-        #50 Reset = 0;
-        #50 jmpFlag = 1; // Ativando o jump
-        #50 jmpFlag = 0; // Desativando o jump
-
-        // Ativando o branch
-        #50 branchFlag = 1;
-        #50 zeroFlag = 1; // Mantendo zeroFlag em 1 para não fazer branch
-        #50 branchFlag = 0;
-
-        // Ativando o branch com zeroFlag 0 para permitir o branch
-        #50 zeroFlag = 0;
-        #50 branchFlag = 1;
-
-        // Tempo para observar o funcionamento
-        #400 $stop;  // Termina a simulação após 400 unidades de tempo
+        // Libera o reset após 5 unidades de tempo
+        #1000 $stop;  // Termina a simulação após 100 unidades de tempo
     end
 
-    // Geração de clock (período de 10 unidades de tempo)
-    always #5 Clk = ~Clk;
+    always #5 Clk = ~Clk; // Geração de clock com período de 10 unidades de tempo
 
-    // Monitoramento dos sinais
+    // Monitorando os sinais de depuração
     initial begin
-        $monitor("Time = %0t, addr = %h, reset_count = %d, jump_count = %d, branch_count = %d, increment_count = %d",
-                 $time, addr, reset_count, jump_count, branch_count, increment_count);
+        $monitor("Reset Count: %d, Jump Count: %d, Branch Count: %d", reset_count, jump_count, branch_count);
     end
 
 endmodule
