@@ -19,9 +19,9 @@ Execução de Instruções Aritméticas: Instruções como ADD, SUB, MUL são im
 
 Operações Lógicas: Instruções como AND, OR, XOR e NOR permitem a manipulação de bits em operações de lógica binária.
 
-Controle de Fluxo: O processador pode saltar para diferentes endereços de memória com base em condições específicas (exemplo: BEQ - branch if equal, BNE - branch if not equal), permitindo a criação de loops e decisões condicionais.
+Controle de Fluxo: O processador pode saltar para diferentes endereços de memória com base em condições específicas BNE - branch if not equal, permitindo a criação de loops e decisões condicionais. Além da instrução JUMP
 
-Instruções de Carga e Armazenamento: Instruções para carregar dados da memória para os registradores (LW, LH, LB) e armazenar dados dos registradores na memória (SW, SH, SB).
+Instruções de Carga e Armazenamento: Instruções para carregar dados da memória para os registradores LW e armazenar dados dos registradores na memória SW.
 
 Execução de Loops: Capacidade de criar e executar loops em Assembly, usando combinações de instruções de salto condicional e incondicional.
 
