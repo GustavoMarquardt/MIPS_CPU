@@ -23,7 +23,6 @@ module TB;
         .Data_BUS_WRITE(Data_BUS_WRITE),
         .ADDR_Prog(ADDR_Prog),
         .CS(CS),
-		  .CS_WB(CS_WB),
 		  .WE(WE),
 		  .CS_P(CS_P)
 		     );
@@ -34,6 +33,9 @@ module TB;
 		$init_signal_spy("dut/CLK_SYS","CLK_SYS",1);
 		$init_signal_spy("dut/CLK_MUL","CLK_MUL",1);
 		$init_signal_spy("dut/writeBack","writeBack",1);
+		//$init_signal_spy("dut/ctrl3","ctrl3",1);
+		//$init_signal_spy("dut/dout","dout",1);
+//		$init_signal_spy("dut/ctrl0","ctrl0",1);
 		// $init_signal_spy("dut/fioA","fioA",1);
 		// $init_signal_spy("dut/fioB","fioB",1);
 		//$init_signal_spy("dut/dataOut_Mult","dataOut_Mult",1);
@@ -43,7 +45,7 @@ module TB;
 		
 	 CLK = 0;
         Reset = 1; // Ativando o reset inicialmente
-        Data_BUS_READ = 32'h0; // Inicializando com 0
+        Data_BUS_READ = 32'hFFFFFFFF; // Inicializando com 0
         Prog_BUS_READ = 32'h0;
 		  
 
@@ -52,7 +54,7 @@ module TB;
 
 
         // Tempo adicional para observar o comportamento
-        #150000 $stop; // Finaliza a simulação após 500 unidades de tempo
+        #134003 $stop; // Finaliza a simulação após 500 unidades de tempo
     end
 
     // Geração de clock com período de 10 unidades de tempo

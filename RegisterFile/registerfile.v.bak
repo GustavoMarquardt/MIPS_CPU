@@ -29,15 +29,10 @@ module registerfile (
                 outB <= 32'h0; // Registrador $0 é sempre 0
             else 
                 outB <= register[rt];
-				if (we && rd != 0) 
+
+            // Escrita
+            if (we && rd != 0) 
                 register[rd] <= in; // Evitar escrever no registrador $0
         end
     end
-	 
-	 /*always @(negedge Clk) begin
-	 // Escrita
-            if (we && rd != 0) 
-                register[rd] <= in; // Evitar escrever no registrador $0
-	 end*/
-	 
 endmodule

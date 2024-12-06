@@ -52,27 +52,29 @@ module cpu(
     input CLK, Reset,
     input [31:0] Data_BUS_READ, Prog_BUS_READ,
     output [31:0] ADDR, Data_BUS_WRITE, ADDR_Prog,
-    output CS, WE, CS_P,
- 
-	 output CS_WB
-
+    output CS, WE, CS_P
 );
-	
-	(*keep=1*)wire [31:0] dataOut_Inst_M;
-	(*keep=1*)wire [31:0] addressCorrection_mem1, addressCorrection_mem2,dataOut_Imm;
-	(*keep=1*)wire [31:0] dataOut_RF1, dataOut_RF2;
-	(*keep=1*)wire [31:0] writeBack, register_A,register_B;	
-	(*keep=1*)wire [31:0]  dataOut_M1,dataOut_M2, dataOut_M3;
-	(*keep=1*)wire [31:0] dataOut_ALU, dataOut_Mult, dataOut_D1, dataOut_D2;	 
-	(*keep=1*)wire [24:0] ctrl0, ctrl1, ctrl2, ctrl3;
-	(*keep=1*)wire [31:0] dataOut_PC;
-	(*keep=1*)wire CLK_MUL, CLK_SYS;
-	(*keep=1*)wire dataOut_M;
-	(*keep=1*)wire [31:0] fioA, fioB;
-	(*keep=1*)wire reset_control;
-	(*keep=1*)wire zeroFlag;
-	(*keep=1*)wire pc_jmpFlag;
-	(*keep=1*)wire pc_branchFlag;
+
+    (*keep=1*)wire [31:0] dataOut_Inst_M;
+    (*keep=1*)wire [31:0] addressCorrection_mem1, addressCorrection_mem2, dataOut_Imm;
+    (*keep=1*)wire [31:0] dataOut_RF1, dataOut_RF2;
+    (*keep=1*)wire [31:0] writeBack, register_A, register_B;
+    (*keep=1*)wire [31:0] dataOut_M1, dataOut_M2, dataOut_M3;
+    (*keep=1*)wire [31:0] dataOut_ALU, dataOut_Mult, dataOut_D1, dataOut_D2;
+    (*keep=1*)wire [24:0] ctrl0, ctrl1, ctrl2;
+	 (*keep=1*)wire [25:0] ctrl3;
+    (*keep=1*)wire [31:0] dataOut_PC;
+    (*keep=1*)wire CLK_MUL, CLK_SYS;
+    (*keep=1*)wire dataOut_M;
+    (*keep=1*)wire [31:0] fioA, fioB;
+    (*keep=1*)wire reset_control;
+    (*keep=1*)wire zeroFlag;
+    (*keep=1*)wire pc_jmpFlag;
+    (*keep=1*)wire pc_branchFlag;
+
+    (*keep=1*)wire CS_WB;
+    assign CS_WB = ctrl3[25];
+
 	
 	
 	PLL pll (
@@ -82,7 +84,7 @@ module cpu(
 	);	
 	
 	assign ADDR = dataOut_D1;
-	assign WE = ctrl2[1];
+	assign WE = ctrl1[3];
 	assign ADDR_Prog = dataOut_PC - 32'h9F0;
 	assign iAddress = dataOut_D1 - 32'h6F0;
 	assign Data_BUS_WRITE = fioB;
@@ -197,19 +199,12 @@ wire [31:0] tempOut;
 		.b(dataOut_ALU),
 		.out(dataOut_D1)
 	);
-	
-	register #(25) CTRL2(
-		.Clk(CLK_SYS),
-		.Reset(Reset),
-		.in(ctrl1[24:0]),
-		.out(ctrl2[24:0])
-	);	 
 
 //Memory 
 	 wire iWE;
 	 wire [9:0] iAddress;
 	ADDRDecoding ADDR_Decoding (
-		.WE(ctrl2[3]),
+		.WE(ctrl1[3]),
 		.iWE(iWE),
 		.iAddress(addressCorrection_mem2),
 		.addr(dataOut_D1),
@@ -226,21 +221,19 @@ wire [31:0] tempOut;
 	);
 	
 	// WRITE_BACK 1
-	
-	 assign CS_WB = ctrl3[2]; 
-	 wire [31:0] dout;
+	  (*keep=1*)wire [31:0] dout;
 	 
 	mux MUX3(
 		.sel(CS_WB),
-		.a(dout),
-		.b(Data_BUS_READ),
+		.a(Data_BUS_READ), // dout
+		.b(dout), // Data_BUS_READ
 		.out(dataOut_M3)
 	);
 	
 		mux MUX4(
 		.sel(ctrl3[2]),
-		.a(dataOut_M3),
-		.b(dataOut_D2),
+		.a(dataOut_M3), // dataOut_D2
+		.b(dataOut_D2), // dataOut_M3
 		.out(writeBack)
 	);
 	
@@ -255,10 +248,10 @@ wire [31:0] tempOut;
 	);
 	// assign reg_destino = ctrl3[14:10];
 	
-   register #(25) CTRL3 (
+   register #(26) CTRL3 (
         .Clk(CLK_SYS),
         .Reset(Reset),
-        .in(ctrl1[24:0]),
+        .in({CS,ctrl1[24:0]}),
         .out(ctrl3)
     );
  endmodule 
